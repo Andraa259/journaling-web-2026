@@ -62,7 +62,7 @@ if st.session_state.user is None:
             email_login = st.text_input("Email Terdaftar", placeholder="kamu@email.com")
             pass_login = st.text_input("Kata Sandi", type="password", placeholder="******")
             
-            submit_login = st.form_submit_with_button("Buka Pintu Jurnal 🔑", use_container_width=True)
+            submit_login = st.form_submit_button("Buka Pintu Jurnal 🔑", use_container_width=True)
             
             if submit_login:
                 if email_login and pass_login:
@@ -83,9 +83,10 @@ if st.session_state.user is None:
             pass_reg = st.text_input("Buat Kata Sandi", type="password", placeholder="Minimal 6 karakter")
             pass_confirm = st.text_input("Ulangi Kata Sandi", type="password", placeholder="Pastikan sama ya")
             
-            submit_reg = st.form_submit_with_button("Buat Akun Kita 🎉", use_container_width=True)
+            submit_reg = st.form_submit_button("Buat Akun Kita 🎉", use_container_width=True)
             
-            if submit_reg:
+
+        if submit_reg:
                 if pass_reg != pass_confirm:
                     st.error("Waduh, kata sandinya nggak cocok nih. Coba dicek lagi.")
                 elif len(pass_reg) < 6:
