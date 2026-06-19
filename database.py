@@ -14,13 +14,14 @@ def login_user(email, password):
         st.error(f"⚠️ Gagal Masuk: {e}")
         return None
 
-def register_user(email, password):
+def change_password(new_password):
     try:
-        res = supabase.auth.sign_up({"email": email, "password": password})
-        return res.user
+        # Fungsi bawaan Supabase untuk memperbarui data user yang sedang login
+        supabase.auth.update_user({"password": new_password})
+        return True
     except Exception as e:
-        st.error(f"⚠️ Gagal Mendaftar: {e}")
-        return None
+        st.error(f"⚠️ Gagal mengubah kata sandi: {e}")
+        return False
 
 def logout_user():
     supabase.auth.sign_out()
