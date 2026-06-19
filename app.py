@@ -137,7 +137,7 @@ else:
                 
                 # Menggunakan layout kolom internal kartu untuk meletakkan tombol opsi di kanan atas
                 with st.container():
-                    col_card_left, col_card_right = st.columns([12, 1])
+                    col_card_left, col_card_right = st.columns([15, 1])
                     
                     with col_card_left:
                         st.markdown(f"""
@@ -157,7 +157,7 @@ else:
                                 st.markdown("<p style='font-size:0.85rem; font-weight:bold; margin:0;'>Aksi Cerita</p>", unsafe_allow_html=True)
                                 
                                 # Sub-opsi 1: Pemicu Form Edit Ekspansif
-                                with st.expansion(label="✏️ Edit Cerita", expanded=False):
+                                with st.expander(label="✏️ Edit Cerita", expanded=False):
                                     edit_title = st.text_input("Judul Baru", value=journal["title"], key=f"et_{journal['id']}")
                                     edit_content = st.text_area("Konten Baru", value=journal["content"], key=f"ec_{journal['id']}")
                                     if st.button("Simpan Perubahan", key=f"es_{journal['id']}", use_container_width=True):
