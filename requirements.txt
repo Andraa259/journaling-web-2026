@@ -1,3 +1,4 @@
 streamlit
 supabase
 postgrest
+streamlit-cookies-controller
